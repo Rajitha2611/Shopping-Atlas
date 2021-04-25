@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale:1.0">
+	<title>Login or Register</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+        *{
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-family: sans-serif;
+}
+
+.clear{
+	clear: both;
+}
+
+.main{
+	width: 100%;
+	height: 100%;
+	
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(static/ShoppingAtlasLogo4.png);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+
+}
+
+.card{
+	width: 400px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.card-title{
+	width: 100%;
+}
+
+.card-title h3{
+	color: #d6c739;
+	text-align: center;
+	padding: 20px 0;
+	font-weight: 500;
+}
+
+.card-title h3 > span{
+	color: #0f0f0f;
+}
+
+.card-body{
+	background-color: #d6c739;
+	padding: 10px 0px;
+	border-radius: 5px;
+	width: 100%;
+	height: 350px;
+	overflow: hidden;
+    background: rgb(0, 0, 0); /* Fallback color */
+     background: rgba(0, 0, 0, 0.1);
+}
+
+.card-body-top{
+	width: 100%;
+	position: relative;
+	border-bottom: 1px solid #262626;
+}
+
+.card-body-top > .btn{
+	border: 0;
+	background-color: transparent;
+	color: #d6c739;
+	font-size: 16px;
+	letter-spacing: 1px;
+	font-weight: 500;
+	width: 180px;
+	padding: 20px 0;
+}
+
+#login{
+	color: #d6c739;
+}
+
+#register{
+	color: #d6c739;
+}
+.active_btn{
+	color: #ca6a32;
+}
+
+#pointer-btn{
+	position: absolute;
+	bottom:-1px;
+	left: 30px;
+	width: 120px;
+	height: 2px;
+	background-color: #d6c739;
+	transition: 0.5s all ease;
+}
+
+
+
+.card-body-login{
+	width: 100%;
+	padding: 15px 20px;
+	position: relative;
+}
+
+.card-body-login > #login-form{
+	position: absolute;
+	top: 30px;
+	left: 25px;
+	text-align: center;
+	transition: 0.5s all ease;
+}
+
+.card-body-login > #register-form{
+	position: absolute;
+	top: 20px;
+	left: 450px;
+	text-align: center;
+	transition: 0.5s all ease;
+}
+
+.input-form{
+	border: none;
+	background-color: transparent;
+	color: #fff;
+	border-bottom: 1px solid #d6c739;
+	width: 350px;
+	padding: 15px 0px;
+	font-size: 15px;
+	letter-spacing: 1px;
+	outline: none;
+}
+
+.submit-form{
+	background-color: #d6c739;
+	
+	border: none;
+	padding: 10px 25px;
+	font-size: 15px;
+	cursor: pointer;
+	letter-spacing: 1px;
+	border-radius: 50px;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+	<div class="main">
+		<div class="card">
+            <b><p style="color: darkred; text-align: center;" >{{message}}</p></b>
+			<div class="card-title">
+				<h3><i class="fa fa-user-circle-o" aria-hidden="true"></i> User <span id="action_title">Login</span></h3>
+			</div>
+			<div class="card-body">
+				<div class="card-body-top">
+					<button id="login" class="btn" name="login" onclick="login()">Login</button>
+					<button id="register" class="btn" name="register" onclick="register()">Register</button>
+					<div id="pointer-btn"></div>
+				</div>
+				<div class="card-body-login">
+					<form id="login-form" action="/login" method="POST">
+						<input class="input-form" type="email" name="email" placeholder="Enter your email" required><br><br>
+						<input class="input-form" type="password" name="password" placeholder="Enter your password" required><br><br><br>
+						<input class="submit-form" type="submit" value="Login">
+					</form>
+					<form id="register-form" action="/register" method="POST">
+						<input class="input-form" type="dname" name="dname" placeholder="Enter your full name" required><br><br>
+						<input class="input-form" type="demail" name="demail" placeholder="Enter your email" required><br><br>
+						<input class="input-form" type="password" name="dpassword" placeholder="Enter your password" required><br><br>
+						<input class="submit-form" type="submit" value="Register">
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		var x = document.getElementById("login-form");
+		var y = document.getElementById("register-form");
+		var z = document.getElementById("pointer-btn");
+		var l = document.getElementById("login");
+		var r = document.getElementById("register");
+		var ac = document.getElementById("action_title");
+
+		function register(){
+			x.style.left = "-450px";
+			y.style.left = "25px";
+			z.style.left = "215px";
+			l.style.color = "#848484";
+			r.style.color = "#fdfcff";
+			ac.textContent = "Register";
+		}
+
+		function login(){
+			x.style.left = "25px";
+			y.style.left = "450px";
+			z.style.left = "30px";
+			l.style.color = "#fdfcff";
+			r.style.color = "#848484";
+			ac.textContent = "Login";
+		}		
+	</script>
+</body>
+</html>

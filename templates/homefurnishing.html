@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block title %}
+Home Furnishing
+{% endblock title %}
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #660033;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="static/ShoppingAtlasLogo3.png" alt="" width="55" height="55"
+                class="d-inline-block align-text-top"> Shopping Atlas</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+
+            </ul>
+            <form class="d-flex">
+
+                <ul>
+                    <li><a href="/"><i class="fa fa-shopping-bag"
+                                style="font-size:20px; color:rgb(246, 246, 250);"></i> Home</a></li>
+
+                    <li><a href="/homefurnishing"><i class="fa fa-home"
+                                style="font-size:20px; color:rgb(246, 246, 250);"></i> Home Furnishings</a></li>
+                    <li><a href="/fashion"><i class="fa fa-black-tie"
+                                style="font-size:20px; color:rgb(246, 246, 250);"></i> Fashion</a></li>
+                    <li><a href="/electronics"><i class="fa fa-laptop"
+                                style="font-size:20px; color:rgb(246, 246, 250);"></i> Electronics</a></li>
+                    <li><a href="/cart"><i class="fa fa-shopping-cart"
+                                style="font-size:20px; color:rgb(246, 246, 250);"></i> View Cart</a></li>
+                    <li><a style="color:rgb(212, 176, 57)"><i class="fa fa-user" style="font-size:20px; color:rgb(232, 238, 240);"></i> {{uname}}</a></li>
+
+                    <li><a href="/logout"><i class="fa fa-power-off" style="font-size:20px; color:rgb(246, 246, 250);"></i></a></li>
+                </ul>
+
+
+
+
+            </form>
+        </div>
+    </div>
+</nav>
+
+
+<div class="row">
+    {% for item in hf %}
+    <div class="column">
+
+        <div class="card" style="width:400px">
+            <img class="card-img-top" src="static/{{item.pimage}}" alt="Card image" style="width:100%">
+            <div class="card-body">
+                <h2 class="card-title">{{item.pname}}</h2>
+                <div class="row">
+                    <h4>Rs.{{item.pprice}}</h4>
+                    <a href="/{{uname}}/addtocart/{{item.pid}}" onclick="alert('Product added to cart')" id="{{item.pid}}" class="btn btn-primary addtocart"
+                    style="font-size:15px"><i class="fa fa-shopping-cart ml-0.5x"
+                            style="font-size:30px; color:rgb(246, 246, 250);"></i><b>Add to Cart</b></a>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    
+    <br>
+</div>
+<br>
+
+
+{% endblock body %}

@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% block title %}
+My Cart
+{% endblock title %}
+{% block body %}
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #660033;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="static/ShoppingAtlasLogo3.png" alt="" width="55" height="55"
+                class="d-inline-block align-text-top"> Shopping Atlas</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+
+            </ul>
+            <form class="d-flex">
+
+                <ul>
+
+                    <li><a href="/categories"><i class="fa fa-list-ul ml-4"
+                                style="font-size:20px; color:rgb(246, 246, 250);"></i>Categories</a></li>
+                    <li><a style="color:rgb(212, 176, 57)"><i class="fa fa-user"
+                                style="font-size:20px; color:rgb(230, 242, 245);"></i> {{uname}}</a>
+                    </li>
+                    <li><a href="/logout"><i class="fa fa-power-off"
+                                style="font-size:20px; color:rgb(246, 246, 250);"></i></a></li>
+                </ul>
+
+
+
+
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div class="cartbg">
+
+    <h1><b>Subtotal</b> Rs. {{plist|sum(attribute='pprice')}}</h1>
+
+    <h3 style="color: darkgreen; font-family: monospace;"><b>Your order is eligible for FREE delivery</b></h3>
+    <br>
+
+
+    <hr class="solid">
+    <br>
+    <br>
+
+
+
+    <div class="row">
+        {% for item in plist %}
+        <div class="column">
+
+
+            <div class="card" style="width:400px">
+                <img class="card-img-top" src="static/{{item.pimage}}" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h2 class="card-title">{{item.pname}}</h2>
+                    <div class="row">
+                        <h4>Rs.{{item.pprice}}</h4>
+                        <a href="/delete/{{item.pid}}" onclick="alert('Product removed')" id="{{item.pid}}"
+                            class="btn btn-danger removefromcart" style="font-size:15px"><i class="fa fa-trash"
+                                style="font-size:20px; color:rgb(246, 246, 250);"></i><b>Remove from Cart</b></a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+
+        {% endfor %}
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+    <br>
+    <br>
+    <br>
+
+
+
+
+
+
+
+<div class="center">
+    <a href="" onclick="alert('Order placed Successfully!')" class="btn btn-dark checkout" style="font-size:15px"><i
+            class="fa fa-shopping-bag" style="font-size:30px;  color:rgb(246, 246, 250);"></i><b> Place Order</b></a>
+</div>
+
+<br>
+<br>
+<br>
+</div>
+
+{% endblock body %}

@@ -1,0 +1,138 @@
+{% extends 'base.html'%}
+{% block title %}
+Shopping Atlas
+{% endblock title %}
+
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-dark mb-0" style="background-color: #660033;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="static/ShoppingAtlasLogo3.png" alt="" width="55" height="55"
+                class="d-inline-block align-items-center"> Shopping Atlas</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+            <form class="d-flex">
+                <li style="text-decoration: none; list-style-type: none;"><a href="/login"><i class="fa fa-user" style="font-size:30px; color:rgb(246, 246, 250);"></i> Login</a></li>
+                
+
+               
+            </form>
+        </div>
+    </div>
+</nav>
+
+
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+        <li data-target="#myCarousel" data-slide-to="5"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="static/pic2.jpg" alt="Los Angeles" style="width:100%;">
+        </div>
+
+        <div class="item">
+            <img src="static/pic3.jpg" alt="Chicago" style="width:100%;">
+        </div>
+
+        <div class="item">
+            <img src="static/pic14.jpg" alt="New york" style="width:100%;">
+        </div>
+
+        <div class="item">
+            <img src="static/pic1.jpg" alt="New york" style="width:100%;">
+        </div>
+        <div class="item">
+            <img src="static/pic7.jpg" alt="New york" style="width:100%;">
+        </div>
+        <div class="item">
+            <img src="static/pic15.jpg" alt="New york" style="width:100%;">
+        </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<div id="shop" class="container">
+
+    <h1 class="center"><b>ABOUT SHOPPING ATLAS</b></h1>
+    <p>
+    <h2 class="slogan">Get What you see!</h2>
+    </p>
+    <h3 class="para"><img class="ME" src="static/mypic.jpg" alt="Pineapple"
+            style="width:150px;height:150px;margin-right:15px;">Shopping Atlas is a cloud computing giant and
+        the
+        largest Indian e-commerce company.
+        It was founded in 2021 by Rajitha Pasumarthy. It is a vast Internet-based
+        enterprise that sells books, music, movies, housewares, electronics, toys, and many other
+        goods, either directly or as the middleman between other retailers and its customers.
+        Its Web Services arm is a multibillion-dollar provider of cloud-based services for
+        millions of business customers around the world, including government agencies and universities.
+        And it’s a major player in consumer electronics-not only by offering devices
+        such as Fire tablets and TV boxes, but also via its Zoey AI assistant service.</h3>
+</div>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container text-center" id="contact">
+
+    <h2><b>CONTACT US</b></h2>
+    <a><i class="fa fa-envelope ml-3" style="font-size:30px; color:blue;"></i>rajithapasumarthy@gmail.com</a><br>
+    <a><i class="fa fa-mobile ml-6" style="font-size:30px; color:blue;"></i>+91 9989739364</a><br>
+    <a><i class="fa fa-map-pin ml-3" style="font-size:30px; color:blue;"></i>Visakhapatnam,India</a>
+</div>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+    <img src="static/map.png" class="img-responsive" id="googleMap" style="width:100%">
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+
+
+{% endblock body %}

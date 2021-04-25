@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% block title %}
+Categories
+{% endblock title %}
+{% block body %}
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #660033;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="static/ShoppingAtlasLogo3.png" alt="" width="55" height="55" class="d-inline-block align-text-top">
+      Shopping Atlas</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+
+      </ul>
+      <form class="d-flex">
+
+        <h5 style="font-size:20px; color:rgb(212, 176, 57)" class="huser">Welcome {{ud.uname}}!</h5>
+      </form>
+    </div>
+  </div>
+</nav>
+<br>
+<div>
+  <h3 class="card-text">Shopping Atlas product lines include several media (books, DVDs, music CDs, videotapes, and
+    software),
+    apparel, baby products, consumer electronics, beauty products, gourmet food, groceries, health and personal-care
+    items, industrial & scientific supplies, kitchen items, jewelry and watches,
+    lawn and garden items, musical instruments, sporting goods, tools, automotive items and toys/games.</h3>
+  <br>
+  <br>
+  <br>
+
+  <div class="row">
+    <div class="column">
+
+
+      <div class="card" style="width:400px">
+        <img class="card-img-top" src="static/pic10.jpg" alt="Card image" style="width:100%">
+        <div class="card-body">
+          <h3 class="card-title"><b>Home Furnishing</b></h3>
+          <h4 class="card-text">Select from interesting table linen, cushion insters, floor mats
+            to add some luxury home furnishings.</h4>
+          <a href="/homefurnishing" class="btn btn-primary stretched-link" style="font-size:15px">View More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+
+
+      <div class="card" style="width:400px">
+        <img class="card-img-top" src="static/pic1.jpg" alt="Card image" style="width:100%">
+        <div class="card-body">
+          <h3 class="card-title"><b>Fashion</b></h3>
+          <h4 class="card-text">Check out Streetwear Style · Ethnic fashion style · Formal Office Wear · Business Casual
+            ·
+            Sports Wear</h4>
+          <a href="/fashion" class="btn btn-primary stretched-link" style="font-size:15px">View More</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="column">
+
+
+      <div class="card" style="width:400px">
+        <img class="card-img-top" src="static/pic5.jpg" alt="Card image" style="width:100%">
+        <div class="card-body">
+          <h3 class="card-title"><b>Electronics</b></h3>
+          <h4 class="card-text">Includes flatscreen TVs, television sets, MP3 players, DVD players, cell phones,
+            desktop computers & laptops</h4>
+          <a href="/electronics" class="btn btn-primary stretched-link" style="font-size:15px">View More</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+{% endblock body %}
